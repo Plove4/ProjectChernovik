@@ -1,0 +1,64 @@
+﻿<Page x:Class="ProjectChernovik.Pages.AddMaterialPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectChernovik.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddMaterialPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <WrapPanel>
+                    <TextBlock Text="Наименование: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding Title}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Количество в упаковке: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding CountInPack}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Единица измерения: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding Unit}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Количество на складе: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding CountInStock}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Минимальное количество: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding MinCount}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Описание: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding Description}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Цена: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding Cost}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Фото: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <TextBox Text="{Binding Image}" Width="200" Height="25"></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Тип материала: "  FontFamily="Segoe Print" FontSize="15" Margin="5" Width="210"></TextBlock>
+                    <ComboBox Name="cmbType" Width="200" Height="25" 
+                              SelectedItem="{Binding MaterialType}" DisplayMemberPath="Title" SelectedValuePath="ID"></ComboBox>
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Background="#FEA9AB">
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Name="Save_btn" Click="Save_btn_Click" Content="Сохранить" Background="#EAB14D" FontFamily="Segoe Print" FontSize="15" Margin="5 5 110 5"></Button>
+                <Button Name="Cancel_btn" Click="Cancel_btn_Click" Content="Отмена" Background="#EAB14D" FontFamily="Segoe Print" FontSize="15" Margin="110 5 5 5"></Button>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Page>
